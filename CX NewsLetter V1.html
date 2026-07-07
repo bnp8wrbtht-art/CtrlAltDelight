@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ctrl+Alt+Delight</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f5f5f5;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:#222;
+    line-height:1.7;
+}
+
+.wrapper{
+    max-width:700px;
+    margin:auto;
+    background:white;
+}
+
+.section{
+    padding:35px 28px;
+}
+
+hr{
+    border:none;
+    border-top:2px solid #ececec;
+}
+
+
+.masthead{
+    background:#FF7A00;
+    color:white;
+    padding:35px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.masthead-left{
+    flex:1;
+}
+
+.newsletter-name{
+    margin-bottom:2px;
+}
+
+.newsletter-name img{
+    height:110px;      /* Adjust as needed */
+    width:auto;
+    display:block;
+}
+
+.newsletter-tag{
+    font-size:20px;
+    font-weight:500;
+    opacity:0.95;
+    margin-bottom:1px;
+}
+
+.issue-details{
+    display:inline-block;
+    background:rgba(255,255,255,0.18);
+    padding:10px 18px;
+    border-radius:50px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.masthead-right img{
+    width:130px;
+    height:60px;
+    object-fit:contain;
+}
+
+.section-title{
+    display:inline-block;
+    background:#FF7A00;
+    color:white;
+    padding:8px 16px;
+    border-radius:50px;
+    font-weight:700;
+    font-size:14px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:30px;
+}
+
+.news-card{
+    margin-bottom:50px;
+}
+
+.news-card img{
+    width:100%;
+    border-radius:12px;
+    margin:20px 0;
+}
+
+.news-headline{
+    font-size:28px;
+    font-weight:700;
+    line-height:1.3;
+}
+
+.news-body{
+    margin-top:15px;
+    color:#555;
+    font-size:18px;
+}
+
+.launch-card{
+    margin-bottom:50px;
+}
+
+.launch-headline{
+    font-size:28px;
+    font-weight:700;
+    line-height:1.3;
+}
+
+.launch-card img{
+    width:100%;
+    border-radius:12px;
+    margin:20px 0;
+}
+
+.launch-body{
+    margin-top:15px;
+    color:#555;
+    font-size:18px;
+}
+
+.launch-content{
+    flex:1;
+}
+
+.didyouknow{
+    background:#fafafa;
+}
+
+.didyouknow ul{
+    padding-left:22px;
+    margin-bottom:30px;
+}
+
+.didyouknow li{
+    margin-bottom:18px;
+    font-size:18px;
+}
+
+.gif{
+    width:100%;
+    border-radius:12px;
+}
+
+.number-box{
+    background:#FFF6ED;
+    padding:25px;
+    border-left:8px solid #FF7A00;
+    border-radius:10px;
+}
+
+.number-headline{
+    font-size:30px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.number-body{
+    font-size:18px;
+    color:#444;
+    margin-bottom:25px;
+}
+
+.meme{
+    width:100%;
+    border-radius:10px;
+}
+
+.shower{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:60px 30px;
+}
+
+.shower h2{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.shower p{
+    font-size:24px;
+    font-style:italic;
+    line-height:1.6;
+    color:#f2f2f2;
+}
+
+.footer{
+    text-align:center;
+    color:#777;
+    font-size:15px;
+    padding:40px 30px;
+    line-height:1.9;
+}
+
+.footer p{
+    margin:8px 0;
+}
+
+.footer strong{
+    color:#222;
+}
+
+.wrapper{
+    width:794px;      /* A4 width at 96 DPI */
+    max-width:794px;
+    margin:auto;
+    background:white;
+}
+
+@media(max-width:650px){
+
+.title{
+    font-size:34px;
+}
+
+.tagline{
+    font-size:24px;
+}
+
+.news-headline{
+    font-size:24px;
+}
+
+.news-body,
+.number-body,
+.didyouknow li{
+    font-size:17px;
+}
+
+.header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+}
+
+.logo{
+    align-self:flex-end;
+}
+
+.didyouknow-list{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    margin-bottom:35px;
+}
+
+.fact{
+    padding-left:22px;
+    position:relative;
+}
+
+.fact::before{
+    content:"•";
+    position:absolute;
+    left:0;
+    top:0;
+    color:#FF7A00;
+    font-size:28px;
+    line-height:1;
+}
+
+.fact h3{
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:8px;
+    color:#222;
+}
+
+.fact p{
+    font-size:17px;
+    color:#555;
+    line-height:1.7;
+}
+
+@media print {
+
+    .news-card,
+    .launch-card,
+    .number-box,
+    .didyouknow,
+    .shower {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<!-- HEADER -->
+
+<div class="masthead">
+
+    <div class="masthead-left">
+
+        <div class="newsletter-name">
+            <img src="images/CtrlAltDel Logo 1.png" alt="Ctrl + Alt + Delight">
+        </div>
+
+        <!-- <div class="newsletter-tag">
+            Ctrl + Alt + Delight
+        </div> -->
+
+        <div class="newsletter-subtitle">
+            Rebooting the way we think about CX
+        </div>
+
+        <div class="issue-details">
+            Volume I &nbsp;&nbsp;|&nbsp;&nbsp;
+            Issue 1 &nbsp;&nbsp;|&nbsp;&nbsp;
+            July 2026 &nbsp;&nbsp;|&nbsp;&nbsp;
+            Price: 4 mins
+        </div>
+
+    </div>
+
+    <div class="masthead-right">
+        <img src="images/Official_logo_of_Piramal_Enterprises_and_Group.svg.png" alt="Company Logo">
+    </div>
+
+</div>
+
+<hr>
+
+<!-- NEWS FLASH -->
+
+<div class="section">
+
+<div class="section-title">
+⚡ News Flash
+</div>
+
+<div class="news-card">
+
+<div class="news-headline">
+One Migration. Zero Drama. ₹50 Lakh Saved...
+</div>
+
+<img src="images/News 1.png" alt="News Image">
+
+<div class="news-body">
+
+Big transformations rarely happen quietly—but this one did. The ICC migration was completed with minimal customer disruption while maintaining service levels above 85%. It has already delivered nearly ₹50 lakh in savings through May, creating a stronger, leaner foundation. While the migration succeeded, NPS briefly slipped into negative territory, impacting the Customer Experience Index.
+
+</div>
+
+</div>
+
+
+<div class="news-card">
+
+<div class="news-headline">
+... But What Did the Customers Say? 😇
+</div>
+
+<img src="images/News 2.png" alt="News Image">
+
+<div class="news-body">
+Anubhav NPS stayed stable with a 2 point drop from Q4 to Q1 😮‍💨, although ICC climbed back to +1 in June and put us back in positive territory as we head into the next quarter.
+On the complaints front too, things stayed steady: complaints/1000 moved from 0.34 in Q4 to 0.24 in Q1. No drama here—and when it comes to complaints, boring is good. 😄
+</div>
+
+</div>
+
+</div>
+
+<hr>
+
+<!-- DID YOU KNOW -->
+
+<div class="section didyouknow">
+
+<div class="section-title">
+Higher Order Thinking Skills 🤓
+</div>
+
+<div class="didyouknow-list">
+
+    <div class="fact">
+        <p>
+            Bananas are berries, but strawberries technically aren't. Botany clearly had a committee meeting without a branding expert.
+        </p>
+    </div>
+
+<!-- <img class="gif"
+src="images/DYK.png"> -->
+
+</div>
+
+</div>
+
+<hr>
+
+<div class="section">
+
+<div class="section-title">
+⚡ More News to Know
+</div>
+
+<div class="news-card">
+
+<div class="news-headline">
+X-Sell PL Just Hit a New High 🚀
+</div>
+
+<img src="images/New Launch 2.png" alt="News Image">
+
+<div class="news-body">
+Cross-sell PL volumes raced past Q4 levels at 726 crores (ICC + OCC). The inbound team beat its run rate by ₹30 cr despite all the migration action in the background. But the surprise package was our three-month-old voice bot PIA, delivering ₹16 cr, growing 3X since launch. And 10% of that business was completely DIY by the customer. Not bad for someone who’s still learning to walk. 🤖
+</div>
+
+</div>
+
+<div class="news-card">
+
+<div class="news-headline">
+3 Lakhs and Counting 📱
+</div>
+
+<img src="images/New Launch 4.png" alt="News Image">
+
+<div class="news-body">
+The Piramal Mobile App just crossed a milestone we've never seen before—3.05 lakh Monthly Active Users, the highest in company history. More customers are tapping, tracking, and transacting than ever before. Safe to say, the app is having a moment. 🚀
+</div>
+
+</div>
+
+</div>
+
+<hr>
+
+<!-- NUMBER NEWS -->
+
+<div class="section">
+
+<div class="section-title">
+📊 Let's talk digits
+</div>
+
+<div class="number-box">
+
+<div class="number-headline">
+#231
+</div>
+
+<div class="number-body">
+Our WhatsApp bot was built for efficiency, but one customer insists on beginning every conversation with a respectful "जय ओम बन्ना सा री हुकम"—231 times and counting. 🙏
+A lovely reminder that even as our channels go digital, our customers make sure the bots stay connected to tradition.
+</div>
+
+<img class="meme"
+src="images/Digits.png">
+
+</div>
+
+</div>
+
+<hr>
+
+<!-- <hr>
+
+DID YOU KNOW
+
+<div class="section didyouknow">
+
+<div class="section-title">
+💡 Do You Know?
+</div>
+
+<div class="didyouknow-list">
+
+    <div class="fact">
+        <h3>🤖 AI Has Entered the Group Chat</h3>
+        <p>
+            The average professional now interacts with AI multiple times a day—often without realizing it. From email suggestions to fraud detection, AI is quietly making thousands of decisions before your morning coffee.
+        </p>
+    </div>
+
+    <div class="fact">
+        <h3>⚡ Your Patience Has a Deadline</h3>
+        <p>
+            Nearly half of customers expect a response within minutes. In today's digital world, "I'll get back to you" is quickly becoming the modern version of being left on read.
+        </p>
+    </div>
+
+    <div class="fact">
+        <h3>Headline 3</h3>
+        <p>
+            Add the third interesting fact here. Try to keep each point roughly the same length.
+        </p>
+    </div>
+
+</div>
+
+<img class="gif"
+src="images/DYK.png">
+
+</div>
+
+<hr> -->
+
+<hr>
+
+<!-- NEW LAUNCHES -->
+
+<div class="section">
+
+    <div class="section-title">
+        🚀 New Launches
+    </div>
+
+    <div class="launch-card">
+
+        <div class="launch-headline">
+            VRMs Are Getting Smarter 📞
+        </div>
+
+        <img src="images/New Launch 3.png" alt="Launch 1">
+
+        <div class="launch-body">
+            The VRM PL Prime campaign keeps evolving. One key insight: customers still need better clarity on applicable charges. Next up? Tracking post-call drawdowns, a standardized RM introduction, and birthday outreach to build stronger relationships. Small tweaks, smarter conversations, and a better CX ahead.
+        </div>
+
+    </div>
+
+    <div class="launch-card">
+
+        <div class="launch-headline">
+            The ₹66 Cr Reasons to Stay 🏦
+        </div>
+
+        <img src="images/New Launch 5.png" alt="Launch 1">
+
+        <div class="launch-body">
+            Retention had a solid Q1. Proactive top-ups delivered ₹23 Cr in disbursals against a ₹25 Cr target, while our broader retention initiatives added a positive delta of ₹66 Cr to the portfolio. Turns out, sometimes the best customer to win is the one you already have. 🙂
+        </div>
+
+    </div>
+
+</div>
+
+<hr>
+
+
+<!-- SHOWER THOUGHT -->
+
+<div class="shower">
+
+<h2>Just Sayin' 🤪</h2>
+
+<p>
+
+What kind of a call center executive would an introvert be? "Yes, I'd like to escalate for you, Ma'am, but I'm shy🙈👉🏻👈🏻"
+
+</p>
+
+</div>
+
+<hr>
+
+<div class="footer">
+
+    <p>Made with ☕ by CX Analytics</p>
+
+    <p>✍️ <strong>Editor & Creative Instigator:</strong> Raj</p>
+
+    <p>⭐ <strong>Reporters:</strong> CX Team</p>
+
+    <p>🖥️ <strong>Design & Development:</strong> Saksham, Pratik</p>
+
+    <p>🖨️ <strong>Printing & Distribution:</strong> Neha</p>
+
+    <p>📸 <strong>Photo Guy:</strong> ChatGPT [AI First 🤖]</p>
+
+</div>
+
+</div>
+
+</body>
+</html>
